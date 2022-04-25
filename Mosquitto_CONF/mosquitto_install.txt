@@ -1,0 +1,19 @@
+1-updating your os packages:
+sudo apt-get update
+2-upgrading your os packages:
+sudo apt-get upgrade
+3-installing mosquitto & mosquitto-clients:
+sudo apt install mosquitto mosquitto-clients
+4-Secure access to mosquitto:
+sudo nano /etc/mosquitto/conf.d/default.conf
+	/**************************************/
+	  allow_anonymous true 
+	  password_file /etc/mosquitto/pwfile
+	  listener 1883 
+	/**************************************/
+5-creation of a user and a password:
+sudo mosquitto_passwd -c /etc/mosquitto/pwfile <here put your user name>
+password : <put your password here>
+Reenter your password :<reput your password here>	  
+6-Restart mosquitto:
+sudo /etc/init.d/mosquitto restart
