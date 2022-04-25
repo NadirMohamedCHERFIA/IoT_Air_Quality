@@ -1,6 +1,16 @@
 const express=require('express');
 const mysql=require('mysql2');
 const cors=require('cors');
+const mqtt=require('mqtt');
+options={
+    username:"iot_enst",
+    password:"cherfianadir",
+    clean:true};
+var client=mqtt.connect('mqtt://mqtt',options);
+client.on("connect",function(){	
+    console.log("connected");
+})
+
 
 const connectWithREtry = () =>{
 ///Create connection 
