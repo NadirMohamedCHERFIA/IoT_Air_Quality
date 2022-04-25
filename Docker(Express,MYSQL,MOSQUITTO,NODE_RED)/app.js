@@ -29,6 +29,7 @@ var client = mqtt.connect("mqtt://localhost",options)
 client.on("connect",function(){	
     console.log("mosquitto connected");
 })
+//inert data to database
 client.on("error",function(error){
     console.log("Can't connect" + error);
     process.exit(1)});
@@ -73,19 +74,7 @@ app.get('/createtable',(req,res)=>{
 app.get('/',(req,res)=>{
     res.send('<h1>!WELCOME TO YOUR DOCKER!!</h1>')
 });
-//inert data
-app.get('/insert',(req,res)=>{
-    //res.setHeader("Acces-Control-Allow-Origin","*");
-    //console.log(req.query);
-    let post=req.query;
-    let sql ='INSERT INTO air_quality SET ?';
-    db.query(sql,post,(err,result)=>{
-        if(err) throw err;
-        console.log(result);
-        res.send(req.query);
-    });
 
-});
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`Server started on port :${port}`);
