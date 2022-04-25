@@ -4,7 +4,6 @@
 #include "WiFi.h"
 #include"WiFiClient.h"
 #include "PubSubClient.h"
-#include <HTTPClient.h>
 #include "Adafruit_PM25AQI.h"
 #include <Adafruit_Sensor.h>
 #include "DFRobot_CCS811.h"
@@ -78,11 +77,6 @@ const char* mqttPassword = "cherfianadir";
 WiFiClient espClient;
 PubSubClient client(espClient);
 /******************************************************************/
-
-/***********HTTP***************************************************/
-String HOST_NAME ="http://192.168.1.5:3000"; // change to PC's IP
-String PATH_NAME   = "/insert";
-/*******************************************************************/
 void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
@@ -397,29 +391,12 @@ Serial.println(F("---------------------------------------"));
   delay(500);
   /****************HTTP**********(to be completed)*****************************/
 
-  HTTPClient http;
-  WiFiClient client;
-
-  String serverPath=HOST_NAME+PATH_NAME+"?temperature="+str_temperature+"&humidity="+str_humidity+"&altitude="+str_altitude+"&pressure="+str_pressure+
-  "&PM10="+str_PM10+"&PM25="+str_PM25+"&PM100="+str_PM100+"&P03um="+str_03um+"&P05um="+str_05um+"&P10um="+str_10um+"&P25um="+str_25um+
-  "&P50um="+str_50um+"&P100um="+str_100um+"&CO2="+str_CO2+"&TVOC="+str_TVOC+"&AIR_QUALITY="+str_air_quality+"&GAS_RESISTANCE="+str_gas_resistance;
-  
-  http.begin(client,serverPath.c_str()); //HTTP
-  int httpCode = http.GET();
-    // httpCode will be negative on error
-  if(httpCode > 0) {
-    // file found at server
-    if(httpCode == HTTP_CODE_OK) {
-      String payload = http.getString();
-      Serial.println(payload);
-    } else {
-      // HTTP header has been send and Server response header has been handled
-      Serial.printf("[HTTP] GET... code: %d\n", httpCode);
-    }
-  } else {
-    Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
-  }
-  http.end();
+  String sql="temperature="+str_temperature+",humidity="+str_humidity+",altitude="+str_altitude+",pressure="+str_pressure+
+  ",PM10="+str_PM10+",PM25="+str_PM25+",PM100="+str_PM100+",P03um="+str_03um+",P05um="+str_05um+",P10um="+str_10um+",P25um="+str_25um+
+  ",P50um="+str_50um+",P100um="+str_100um+",CO2="+str_CO2+",TVOC="+str_TVOC+",AIR_QUALITY="+str_air_quality+",GAS_RESISTANCE="+str_gas_resistance;
+    client.publish("sql",sql);
+    delay(500);
+    
 /*********************************************************/
    }
       client.loop();
