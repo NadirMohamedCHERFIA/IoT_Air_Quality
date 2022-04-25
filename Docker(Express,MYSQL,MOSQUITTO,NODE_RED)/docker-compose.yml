@@ -20,9 +20,6 @@ services:
       - ./:/var/lib/mysql
     mqtt:
       image: mjenz/rpi-mosquitto
-      environment:
-        - MYSQL_USER=iot_enst
-        - MYSQL_PASSWORD=cherfianadir
     node-red:
       image: hypriot/rpi-node
       depends_on: mqtt
