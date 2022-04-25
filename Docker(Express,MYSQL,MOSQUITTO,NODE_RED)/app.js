@@ -1,14 +1,16 @@
 const express=require('express');
-const mysql=require('mysql2');
+const mysql=require('mysql');
 const cors=require('cors');
+const mqtt=require('mqtt');
 
-const connectWithREtry = () =>{
+
+//const connectWithREtry = () =>{
 ///Create connection 
 const db=mysql.createConnection({
-    host:"database",
+    host:"localhost",
     user:'root',
     password:'Cherfianadir2022@',
-    database: 'iot_air_quality'
+    database: 'test'
 });
 //connect
 db.connect((err)=>{
@@ -18,9 +20,32 @@ db.connect((err)=>{
     }
     console.log('mysql connected ....');
 });
-}
-
-connectWithREtry();
+//}
+options={
+    username:"iot_enst",
+    password:"cherfianadir",
+    clean:true}
+var client = mqtt.connect("mqtt://localhost",options)
+client.on("connect",function(){	
+    console.log("mosquitto connected");
+})
+client.on("error",function(error){
+    console.log("Can't connect" + error);
+    process.exit(1)});
+    var topic=["query"];
+    console.log("subscribing to topic");
+    client.subscribe(topic,{qos:1});
+    client.on('message',function(topic, message, packet){
+        let sql ='INSERT INTO mqtt SET '+message;
+        console.log(sql)
+        console.log("message is "+ message);
+        console.log("topic is "+ topic);
+        db.query(sql,(err,result)=>{
+            if(err) throw err;
+            console.log(result);
+        });
+    });
+//connectWithREtry();
 
 const app = express();
 app.use(cors({
@@ -59,7 +84,7 @@ app.get('/insert',(req,res)=>{
         console.log(result);
         res.send(req.query);
     });
-    //const data = res.end(JSON.stringify(req.query));
+
 });
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{
