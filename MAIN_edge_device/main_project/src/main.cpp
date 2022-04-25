@@ -389,7 +389,7 @@ Serial.println(F("---------------------------------------"));
   delay(500);
   client.publish("esp/MQ135/air_quality",str_air_quality);
   delay(500);
-  /****************HTTP**********(to be completed)*****************************/
+  /****************DATABASE**********(to be completed)*****************************/
 
   String sql="temperature="+str_temperature+",humidity="+str_humidity+",altitude="+str_altitude+",pressure="+str_pressure+
   ",PM10="+str_PM10+",PM25="+str_PM25+",PM100="+str_PM100+",P03um="+str_03um+",P05um="+str_05um+",P10um="+str_10um+",P25um="+str_25um+
