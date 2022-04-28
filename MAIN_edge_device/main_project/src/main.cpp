@@ -11,6 +11,8 @@
 #include "MQ135.h"
 #include "SPI.h"
 #include <ArduinoJson.h>
+
+#define esp32_board_id "BV1.1"
 /*Defining pins to use */
 
 /**********LEDS***************/
@@ -353,39 +355,39 @@ Serial.println(F("---------------------------------------"));
   dtostrf(CCS811.getTVOCPPB(), 1, 2,str_TVOC);
   dtostrf(CCS811.getCO2PPM(), 1, 2,str_CO2);
   dtostrf(air_quality, 1, 2,str_air_quality);
-  client.publish("esp/PMA003i/PM10",str_PM100);
+  client.publish("esp/"+esp32_board_id+"PMA003i/PM10",str_PM100);
   delay(500);
-  client.publish("esp/PMA003i/PM25",str_PM25);
+  client.publish("esp/"+esp32_board_id+"PMA003i/PM25",str_PM25);
   delay(500);
-  client.publish("esp/PMA003i/PM100",str_PM10);
+  client.publish("esp/"+esp32_board_id+"PMA003i/PM100",str_PM10);
   delay(500);
-  client.publish("esp/PMA003i/03um",str_03um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/03um",str_03um);
   delay(500);
-  client.publish("esp/PMA003i/05um",str_05um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/05um",str_05um);
   delay(500);
-  client.publish("esp/PMA003i/10um",str_10um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/10um",str_10um);
   delay(500);
-  client.publish("esp/PMA003i/25um",str_25um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/25um",str_25um);
   delay(500);
-  client.publish("esp/PMA003i/50um",str_50um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/50um",str_50um);
   delay(500);
-  client.publish("esp/PMA003i/100um",str_100um);
+  client.publish("esp/"+esp32_board_id+"PMA003i/100um",str_100um);
   delay(500);
-   client.publish("esp/BME680/temperature",str_temperature);
+   client.publish("esp/"+esp32_board_id+"BME680/temperature",str_temperature);
   delay(500);
-  client.publish("esp/BME680/humidity",str_humidity);
+  client.publish("esp/"+esp32_board_id+"BME680/humidity",str_humidity);
   delay(500);
-  client.publish("esp/BME680/pressure",str_pressure);
+  client.publish("esp/"+esp32_board_id+"BME680/pressure",str_pressure);
   delay(500);
-  client.publish("esp/BME680/gas_resistance",str_gas_resistance);
+  client.publish("esp/"+esp32_board_id+"BME680/gas_resistance",str_gas_resistance);
   delay(500);
-  client.publish("esp/BME680/altitude",str_altitude);
+  client.publish("esp/"+esp32_board_id+"BME680/altitude",str_altitude);
   delay(500);
-  client.publish("esp/CCS811/TVOC",str_TVOC);
+  client.publish("esp/"+esp32_board_id+"CCS811/TVOC",str_TVOC);
   delay(500);
-  client.publish("esp/CCS811/CO2",str_CO2);
+  client.publish("esp/"+esp32_board_id+"CCS811/CO2",str_CO2);
   delay(500);
-  client.publish("esp/MQ135/air_quality",str_air_quality);
+  client.publish("esp/"+esp32_board_id+"MQ135/air_quality",str_air_quality);
   delay(500);
   /****************Creating a Json for data and send it to topic relied wit db******************************************/
   //Sending a larger JSON object takes a longer period of time than what the WDT is set for. 
@@ -416,9 +418,9 @@ Serial.println(F("---------------------------------------"));
   jsonData2.printTo(jsonDataBuffer_2, sizeof(jsonDataBuffer_2));
   Serial.println(jsonDataBuffer_1);
   Serial.println(jsonDataBuffer_2);
-  bool jsonData_sending_state1=client.publish("esp/jsonFormatedData1", jsonDataBuffer_1);
+  bool jsonData_sending_state1=client.publish("esp32/"+esp32_board_id+"jsonFormatedData1", jsonDataBuffer_1);
   delay(1000);
-  bool jsonData_sending_state2=client.publish("esp/jsonFormatedData2", jsonDataBuffer_2);
+  bool jsonData_sending_state2=client.publish("esp32/"+esp32_board_id+"jsonFormatedData2", jsonDataBuffer_2);
   delay(1000);
 if (jsonData_sending_state1 == true) {
     Serial.println("Success sending message");

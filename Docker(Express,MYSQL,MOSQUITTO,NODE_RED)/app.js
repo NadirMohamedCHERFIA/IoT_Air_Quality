@@ -32,7 +32,7 @@ client.on("connect",function(){
 client.on("error",function(error){
     console.log("Can't connect" + error);
     process.exit(1)});
-    var topic1="esp/jsonFormatedData1";
+    var topic1="esp32/BV1.1/jsonFormatedData1";
     console.log("subscribing t/o topic");
     client.subscribe(topic1,{qos:1});
     client.on('message',function(topic1, message, packet){
@@ -47,7 +47,7 @@ client.on("error",function(error){
     client2.on("error",function(error){
         console.log("Can't connect" + error);
         process.exit(1)});
-        var topic2="esp/jsonFormatedData2";
+        var topic2="esp32/BV1.1/jsonFormatedData2";
         console.log("subscribing t/o topic");
         client2.subscribe(topic2,{qos:1});
         client2.on('message',function(topic2, message, packet){
