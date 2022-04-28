@@ -10,7 +10,7 @@
 #include "Adafruit_BME680.h"
 #include "MQ135.h"
 #include "SPI.h"
-
+#include <ArduinoJson.h>
 /*Defining pins to use */
 
 /**********LEDS***************/
@@ -29,8 +29,6 @@
 /* Here i used a differents pins for an usual i2c pins in order to work with two sensors using i2c*/
 #define I2C_SDA_pma300i 33
 #define I2C_SCL_pma300i 32
-
-
 /*----------------------------------------------------------*/
 /*For the CCS811 i worked with the dedicated pins for i2c on 
 board (it depend for every board so make sure to check your 
@@ -389,16 +387,51 @@ Serial.println(F("---------------------------------------"));
   delay(500);
   client.publish("esp/MQ135/air_quality",str_air_quality);
   delay(500);
-  /****************DATABASE**********(to be completed)*****************************/
+  /****************Creating a Json for data and send it to topic relied wit db******************************************/
+  //Sending a larger JSON object takes a longer period of time than what the WDT is set for. 
+  //so we need to break up the JSON object into multiple pieces and send it in smaller chunks instead of one large one.
+  DynamicJsonBuffer jBuffer_1,jBuffer_2;
+  JsonObject& jsonData1 = jBuffer_1.createObject();
+  JsonObject& jsonData2 = jBuffer_2.createObject();
+  jsonData1["temperature"]=str_temperature;
+  jsonData1["humidity"]=str_humidity;
+  jsonData1["altitude"]=str_altitude;
+  jsonData1["pressure"]=str_pressure;
+  jsonData1["PM10"]=str_PM10;
+  jsonData1["PM25"]=str_PM25;
+  jsonData1["PM100"]=str_PM100;
+  jsonData1["P03um"]=str_03um;
+  jsonData1["P05um"]=str_05um;
+  jsonData1["P10um"]=str_10um;
+  jsonData1["P25um"]=str_25um;
+  jsonData1["P50um"]=str_50um;
+  jsonData1["P100um"]=str_100um;
+  jsonData2["CO2"]=str_CO2;
+  jsonData2["TVOC"]=str_TVOC;
+  jsonData2["AIR_QUALITY"]=str_air_quality;
+  jsonData2["GAS_RESISTANCE"]=str_gas_resistance;
+  char jsonDataBuffer_1[400];
+  char jsonDataBuffer_2[400];
+  jsonData1.printTo(jsonDataBuffer_1, sizeof(jsonDataBuffer_1));
+  jsonData2.printTo(jsonDataBuffer_2, sizeof(jsonDataBuffer_2));
+  Serial.println(jsonDataBuffer_1);
+  Serial.println(jsonDataBuffer_2);
+  bool jsonData_sending_state1=client.publish("esp/jsonFormatedData1", jsonDataBuffer_1);
+  delay(1000);
+  bool jsonData_sending_state2=client.publish("esp/jsonFormatedData2", jsonDataBuffer_2);
+  delay(1000);
+if (jsonData_sending_state1 == true) {
+    Serial.println("Success sending message");
+} else {
+    Serial.println("Error sending message");
+}
 
-  String sql="temperature="+str_temperature+",humidity="+str_humidity+",altitude="+str_altitude+",pressure="+str_pressure+
-  ",PM10="+str_PM10+",PM25="+str_PM25+",PM100="+str_PM100+",P03um="+str_03um+",P05um="+str_05um+",P10um="+str_10um+",P25um="+str_25um+
-  ",P50um="+str_50um+",P100um="+str_100um+",CO2="+str_CO2+",TVOC="+str_TVOC+",AIR_QUALITY="+str_air_quality+",GAS_RESISTANCE="+str_gas_resistance;
-    client.publish("sql",sql);
-    delay(500);
-    
-/*********************************************************/
-   }
+if (jsonData_sending_state2 == true) {
+    Serial.println("Success sending message");
+} else {
+    Serial.println("Error sending message");
+}
+       }
       client.loop();
 digitalWrite(LED_GREEN_DATA_SENT_SUCCESSFULLY,HIGH);
 delay(1000);

@@ -2,26 +2,40 @@ version: '3'
 services:
   node-app:
     build: .
+    network_mode: host
     ports:
       - "3000:3000"
     environment:
       - PORT=3000
     depends_on:
       - database
+    restart: always
   database:
     image: hypriot/rpi-mysql
-    command: --default-authentication-plugin=mysql_native_password
     restart: always
+    network_mode: host
+    ports:
+      - "1883:1883"
+      - "9001:9001"
     environment:
       - MYSQL_ROOT_PASSWORD=Cherfianadir2022@
+      - MYSQL_DATABASE=iot_air_quality
     volumes:
       - mysql-db:/var/lib/mysql
       - ./:/var/lib/mysql
-    mqtt:
-      image: mjenz/rpi-mosquitto
-    node-red:
-      image: hypriot/rpi-node
-      depends_on: mqtt
-      
+  mqtt:
+    image: mjenz/rpi-mosquitto
+    network_mode: host
+    restart: always
+  node-red:
+    image: nodered/node-red
+    restart: always
+    network_mode: host
+    volumes:
+      - node_red_data:/data
+    depends_on:
+      - mqtt
+
 volumes:
   mysql-db:
+  node_red_data:
