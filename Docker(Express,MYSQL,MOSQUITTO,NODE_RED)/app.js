@@ -3,9 +3,9 @@ const mysql=require('mysql');
 const cors=require('cors');
 const mqtt=require('mqtt');
 const { json } = require('express/lib/response');
-
 //const connectWithREtry = () =>{
 ///Create connection 
+let message1;
 const db=mysql.createConnection({
     host:"localhost",
     user:'root',
@@ -30,14 +30,14 @@ client.on("connect",function(){
     console.log("client1:mosquitto connected");
 })
 client.on("error",function(error){
-    console.log("Can't connect" + error);
+    console.log("Can't connect!" + error);
     process.exit(1)});
-    var topic1="esp32/BV1.1/jsonFormatedData1";
+    var topic1="esp32/BoardV1.1/jsonFormatedData1";
     console.log("subscribing t/o topic");
     client.subscribe(topic1,{qos:1});
     client.on('message',function(topic1, message, packet){
-        global.message1=message;
-        console.log("message is "+ message1);
+        message1=message;
+        console.log("message is "+ message);
         console.log("topic is "+ topic1);
     });
     var client2 = mqtt.connect("mqtt://localhost",options)
@@ -47,14 +47,14 @@ client.on("error",function(error){
     client2.on("error",function(error){
         console.log("Can't connect" + error);
         process.exit(1)});
-        var topic2="esp32/BV1.1/jsonFormatedData2";
+        var topic2="esp32/BoardV1.1/jsonFormatedData2";
         console.log("subscribing t/o topic");
         client2.subscribe(topic2,{qos:1});
         client2.on('message',function(topic2, message, packet){
         const jsonFormatedData2=JSON.parse(message);
         const jsonFormatedData=JSON.parse(message1);
         var query1='INSERT INTO air_quality SET '+'TEMPERATURE_C='+jsonFormatedData.temperature+',HUMIDITY_percentage='+jsonFormatedData.humidity+',ALTITUDE_m='+jsonFormatedData.altitude+',PRESSURE_hPa='+jsonFormatedData.pressure+',PM10='+jsonFormatedData.PM10+',PM25='+jsonFormatedData.PM25+',PM100='+jsonFormatedData.PM100+
-        ',P03um_perdecilitre='+jsonFormatedData.P03um+',P05um_perdecilitre='+jsonFormatedData.P05um+',P10um_perdecilitre='+jsonFormatedData.P10um+',P25um_perdecilitre='+jsonFormatedData.P25um+',P50um_perdecilitre='+jsonFormatedData.P50um+',P100um_perdecilitre='+jsonFormatedData.P100um+
+        ',P03um_perdecilitre='+jsonFormatedData.P03um+',P05um_perdecilitre='+jsonFormatedData.P05um+',P10um_perdecilitre='+jsonFormatedData.P10um+',P25um_perdecilitre='+jsonFormatedData.P25um+',P50um_perdecilitre='+jsonFormatedData2.P50um+',P100um_perdecilitre='+jsonFormatedData2.P100um+
         ",CO2_ppm="+jsonFormatedData2.CO2+",TVOC_ppb="+jsonFormatedData2.TVOC+",AIR_QUALITY_ppm="+jsonFormatedData2.AIR_QUALITY+",GAS_RESISTANCE_KOhms="+jsonFormatedData2.GAS_RESISTANCE;
             console.log("message is "+ message);
             console.log("topic is "+ topic2);

@@ -12,7 +12,7 @@
 #include "SPI.h"
 #include <ArduinoJson.h>
 
-#define esp32_board_id "BV1.1"
+const char* esp32_board_id="BoardV1.1";
 /*Defining pins to use */
 
 /**********LEDS***************/
@@ -338,6 +338,42 @@ Serial.println(F("---------------------------------------"));
   char str_TVOC[20];
   char str_CO2[20];
   char str_air_quality[20];
+  char topic_PM100[50];
+  char topic_PM25[50];
+  char topic_PM10[50];
+  char topic_03um[50];
+  char topic_05um[50];
+  char topic_10um[50];
+  char topic_25um[50];
+  char topic_50um[50];
+  char topic_100um[50];
+  char topic_temperature[50];
+  char topic_humidity[50];
+  char topic_pressure[50];
+  char topic_altitude[50];
+  char topic_gas_resistance[50];
+  char topic_TVOC[50];
+  char topic_CO2[50];
+  char topic_air_quality[50];
+  char topic_data_first_chunk[50];
+  char topic_data_second_chunk[50];
+  sprintf(topic_03um,"esp32/%s%s",esp32_board_id,"/PMA003i/P03um");
+  sprintf(topic_05um,"esp32/%s%s",esp32_board_id,"/PMA003i/P05um");
+  sprintf(topic_10um,"esp32/%s%s",esp32_board_id,"/PMA003i/P10um");
+  sprintf(topic_25um,"esp32/%s%s",esp32_board_id,"/PMA003i/P25um");
+  sprintf(topic_50um,"esp32/%s%s",esp32_board_id,"/PMA003i/P50um");
+  sprintf(topic_100um,"esp32/%s%s",esp32_board_id,"/PMA003i/P100um");
+  sprintf(topic_temperature,"esp32/%s%s",esp32_board_id,"/BME680/temperature");
+  sprintf(topic_humidity,"esp32/%s%s",esp32_board_id,"/BME680/humidity");
+  sprintf(topic_pressure,"esp32/%s%s",esp32_board_id,"/BME680/pressure");
+  sprintf(topic_altitude,"esp32/%s%s",esp32_board_id,"/BME680/altitude");
+  sprintf(topic_gas_resistance,"esp32/%s%s",esp32_board_id,"/BME680/gas_resistance");
+  sprintf(topic_PM10,"esp32/%s%s",esp32_board_id,"/PMA003i/PM10");
+  sprintf(topic_PM25,"esp32/%s%s",esp32_board_id,"/PMA003i/PM25");
+  sprintf(topic_PM100,"esp32/%s%s",esp32_board_id,"/PMA003i/PM100");
+  sprintf(topic_TVOC,"esp32/%s%s",esp32_board_id,"/CCS811/TVOC");
+  sprintf(topic_CO2,"esp32/%s%s",esp32_board_id,"/CCS811/CO2");
+  sprintf(topic_air_quality,"esp32/%s%s",esp32_board_id,"/MQ135/air_quality");
   dtostrf(data.pm100_standard, 1, 2,str_PM100);
   dtostrf(data.pm25_standard, 1, 2,str_PM25);
   dtostrf(data.pm10_standard, 1, 2,str_PM10);
@@ -355,39 +391,40 @@ Serial.println(F("---------------------------------------"));
   dtostrf(CCS811.getTVOCPPB(), 1, 2,str_TVOC);
   dtostrf(CCS811.getCO2PPM(), 1, 2,str_CO2);
   dtostrf(air_quality, 1, 2,str_air_quality);
-  client.publish("esp/"+esp32_board_id+"PMA003i/PM10",str_PM100);
+  
+  client.publish(topic_PM100,str_PM100);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/PM25",str_PM25);
+  client.publish(topic_PM25,str_PM25);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/PM100",str_PM10);
+  client.publish(topic_PM10,str_PM10);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/03um",str_03um);
+  client.publish(topic_03um,str_03um);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/05um",str_05um);
+  client.publish(topic_05um,str_05um);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/10um",str_10um);
+  client.publish(topic_10um,str_10um);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/25um",str_25um);
+  client.publish(topic_25um,str_25um);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/50um",str_50um);
+  client.publish(topic_50um,str_50um);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"PMA003i/100um",str_100um);
+  client.publish(topic_100um,str_100um);
   delay(500);
-   client.publish("esp/"+esp32_board_id+"BME680/temperature",str_temperature);
+   client.publish(topic_temperature,str_temperature);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"BME680/humidity",str_humidity);
+  client.publish(topic_humidity,str_humidity);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"BME680/pressure",str_pressure);
+  client.publish(topic_pressure,str_pressure);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"BME680/gas_resistance",str_gas_resistance);
+  client.publish(topic_gas_resistance,str_gas_resistance);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"BME680/altitude",str_altitude);
+  client.publish(topic_altitude,str_altitude);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"CCS811/TVOC",str_TVOC);
+  client.publish(topic_TVOC,str_TVOC);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"CCS811/CO2",str_CO2);
+  client.publish(topic_CO2,str_CO2);
   delay(500);
-  client.publish("esp/"+esp32_board_id+"MQ135/air_quality",str_air_quality);
+  client.publish(topic_air_quality,str_air_quality);
   delay(500);
   /****************Creating a Json for data and send it to topic relied wit db******************************************/
   //Sending a larger JSON object takes a longer period of time than what the WDT is set for. 
@@ -406,8 +443,8 @@ Serial.println(F("---------------------------------------"));
   jsonData1["P05um"]=str_05um;
   jsonData1["P10um"]=str_10um;
   jsonData1["P25um"]=str_25um;
-  jsonData1["P50um"]=str_50um;
-  jsonData1["P100um"]=str_100um;
+  jsonData2["P50um"]=str_50um;
+  jsonData2["P100um"]=str_100um;
   jsonData2["CO2"]=str_CO2;
   jsonData2["TVOC"]=str_TVOC;
   jsonData2["AIR_QUALITY"]=str_air_quality;
@@ -418,20 +455,23 @@ Serial.println(F("---------------------------------------"));
   jsonData2.printTo(jsonDataBuffer_2, sizeof(jsonDataBuffer_2));
   Serial.println(jsonDataBuffer_1);
   Serial.println(jsonDataBuffer_2);
-  bool jsonData_sending_state1=client.publish("esp32/"+esp32_board_id+"jsonFormatedData1", jsonDataBuffer_1);
+  sprintf(topic_data_first_chunk,"esp32/%s%s",esp32_board_id,"/jsonFormatedData1");
+  sprintf(topic_data_second_chunk,"esp32/%s%s",esp32_board_id,"/jsonFormatedData2");
+  bool jsonData_sending_state1=client.publish(topic_data_first_chunk, jsonDataBuffer_1);
   delay(1000);
-  bool jsonData_sending_state2=client.publish("esp32/"+esp32_board_id+"jsonFormatedData2", jsonDataBuffer_2);
+  bool jsonData_sending_state2=client.publish(topic_data_second_chunk, jsonDataBuffer_2);
   delay(1000);
+  Serial.println(topic_data_first_chunk);
 if (jsonData_sending_state1 == true) {
-    Serial.println("Success sending message");
+    Serial.println("Success sending first data chunk");
 } else {
-    Serial.println("Error sending message");
+    Serial.println("Error sending first data chunk");
 }
 
 if (jsonData_sending_state2 == true) {
-    Serial.println("Success sending message");
+    Serial.println("Success sending second data chunk");
 } else {
-    Serial.println("Error sending message");
+    Serial.println("Error sending second data chunk");
 }
        }
       client.loop();
