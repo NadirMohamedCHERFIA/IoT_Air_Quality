@@ -3,7 +3,6 @@ const mysql=require('mysql');
 const cors=require('cors');
 const mqtt=require('mqtt');
 const { json } = require('express/lib/response');
-//const connectWithREtry = () =>{
 ///Create connection 
 let message1;
 const db=mysql.createConnection({
@@ -20,7 +19,6 @@ db.connect((err)=>{
     }
     console.log('mysql connected ....');
 });
-//}
 options={
     username:"iot_enst",
     password:"cherfianadir",
@@ -65,10 +63,6 @@ client.on("error",function(error){
             });
         });
     
-        
-        
- 
-//connectWithREtry();
 
 const app = express();
 app.use(cors({
@@ -108,8 +102,6 @@ app.get('/',(req,res)=>{
 });
 //inert data
 app.get('/insert',(req,res)=>{
-    //res.setHeader("Acces-Control-Allow-Origin","*");
-    //console.log(req.query);
     let post=req.query;
     let sql ='INSERT INTO air_quality SET ?';
     db.query(sql,post,(err,result)=>{
