@@ -293,7 +293,7 @@ Serial.println("***********************************************");
 Serial.println("********************MQ135**********************");
 Serial.println("***********************************************");
 /********This data can be used to detected other gases as mentioned in datasheet
- * but in matter of fact its not that precise to take as a source of information**/
+ * but in matter of fact its not that precise to take it as a source of information**/
   //Serial.print("MQ135 RZero: ");
   //Serial.print(rzero);
   //Serial.print("\t Corrected RZero: ");

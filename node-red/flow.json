@@ -1,0 +1,2527 @@
+[
+    {
+        "id": "4141d79aadc60e03",
+        "type": "tab",
+        "label": "Air Quality",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "52a25a06bc95291d",
+        "type": "tab",
+        "label": "Particulates ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "564c1cf6652e3d13",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7d9f66928278cbf6",
+        "type": "tab",
+        "label": "Pollutants",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bebf7213b6b34824",
+        "type": "tab",
+        "label": "Style",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e3302d7b55482cba",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a923ab0cdd8f9544",
+        "type": "ui_tab",
+        "name": "Weather",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e3c48110da354e2c",
+        "type": "ui_group",
+        "name": "Particulates Matter",
+        "tab": "fc60932aecfe256a",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c45498108e07daf2",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "a923ab0cdd8f9544",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc60932aecfe256a",
+        "type": "ui_tab",
+        "name": "Particulates",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4be68c93cd1201f6",
+        "type": "ui_tab",
+        "name": "Air_quality",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6e35c65e8233cb8f",
+        "type": "ui_group",
+        "name": "Air Quality",
+        "tab": "4be68c93cd1201f6",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "47ff3bd86da6aecc",
+        "type": "ui_tab",
+        "name": "Pollutants",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "428bd1e252a8757c",
+        "type": "ui_group",
+        "name": "CO2",
+        "tab": "47ff3bd86da6aecc",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d3e0e49461a20801",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Verdana,Verdana,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Verdana,Verdana,Geneva,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Air quality Monitoring",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "456c3d77a205fcde",
+        "type": "ui_group",
+        "name": "Particulates Matter charts",
+        "tab": "fc60932aecfe256a",
+        "order": 2,
+        "disp": true,
+        "width": "18",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "702e15335c491dbc",
+        "type": "ui_group",
+        "name": "Particulates",
+        "tab": "fc60932aecfe256a",
+        "order": 3,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc77b90eba9abcb0",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "e3c48110da354e2c",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a66053e82facef96",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "e3c48110da354e2c",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f33125fd78b8075c",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "e3c48110da354e2c",
+        "order": 10,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "71d7e526d69dddfd",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "e3c48110da354e2c",
+        "order": 17,
+        "width": "2",
+        "height": "1"
+    },
+    {
+        "id": "b75a1553f822ba99",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "702e15335c491dbc",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a1f408295ae64fb2",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "702e15335c491dbc",
+        "order": 3,
+        "width": "2",
+        "height": "1"
+    },
+    {
+        "id": "0f7f97979b49978b",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "702e15335c491dbc",
+        "order": 5,
+        "width": "2",
+        "height": "1"
+    },
+    {
+        "id": "bc5051860e2c59cb",
+        "type": "ui_spacer",
+        "z": "52a25a06bc95291d",
+        "name": "spacer",
+        "group": "702e15335c491dbc",
+        "order": 7,
+        "width": "3",
+        "height": "1"
+    },
+    {
+        "id": "e3b50b4ca1f26d87",
+        "type": "ui_group",
+        "name": "Particulates charts",
+        "tab": "fc60932aecfe256a",
+        "order": 4,
+        "disp": true,
+        "width": "18",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "b46a54fee73bc4af",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "a923ab0cdd8f9544",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a8de833ef8b3b4bf",
+        "type": "ui_group",
+        "name": "Altitude",
+        "tab": "a923ab0cdd8f9544",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "74ea4b3808458b08",
+        "type": "ui_group",
+        "name": "Pressure",
+        "tab": "a923ab0cdd8f9544",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9c47c5f84ee30760",
+        "type": "ui_group",
+        "name": "Ga Resistance",
+        "tab": "a923ab0cdd8f9544",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8957198d1d9bbb4a",
+        "type": "ui_group",
+        "name": "TVOC",
+        "tab": "47ff3bd86da6aecc",
+        "order": 6,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "71ca3a5170c14493",
+        "type": "ui_spacer",
+        "z": "7d9f66928278cbf6",
+        "name": "spacer",
+        "group": "428bd1e252a8757c",
+        "order": 2,
+        "width": "2",
+        "height": "1"
+    },
+    {
+        "id": "94780358513f4338",
+        "type": "ui_spacer",
+        "z": "7d9f66928278cbf6",
+        "name": "spacer",
+        "group": "8957198d1d9bbb4a",
+        "order": 2,
+        "width": "2",
+        "height": "1"
+    },
+    {
+        "id": "4b55b836e2e8f82c",
+        "type": "mqtt in",
+        "z": "4141d79aadc60e03",
+        "name": "",
+        "topic": "esp32/BoardV1.1/MQ135/air_quality",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "bb652a89d00d2803"
+            ]
+        ]
+    },
+    {
+        "id": "bb652a89d00d2803",
+        "type": "ui_artlessgauge",
+        "z": "4141d79aadc60e03",
+        "group": "6e35c65e8233cb8f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "fa-fire",
+        "label": "Air_Quality",
+        "unit": "C",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#73d216",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#73d216",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": "7",
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 540,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "247dc2a62ae6d4ca",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "e3c48110da354e2c",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "name": "PM10",
+        "icon": "fa-fire",
+        "label": "PM10",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": "3",
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 430,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "42bf1bb13bca4e65",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/PM10",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "247dc2a62ae6d4ca",
+                "c7cc294b2adae8d7"
+            ]
+        ]
+    },
+    {
+        "id": "0abe5165174884cb",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "e3c48110da354e2c",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "name": "PM25",
+        "icon": "fa-fire",
+        "label": "PM25",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 5,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 15,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 20,
+                "col": "#ff33cc",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#75507b",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 40,
+                "col": "#660033",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#660033",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": "3",
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fdbce49352abe32e",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/PM25",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "0abe5165174884cb",
+                "8ed5cfb5b73718b4"
+            ]
+        ]
+    },
+    {
+        "id": "d82d2e4300a7215f",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/PM100",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "62fdac8c8e26f401",
+                "e3a9b24f8e9a7b3d"
+            ]
+        ]
+    },
+    {
+        "id": "c7cc294b2adae8d7",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "456c3d77a205fcde",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "label": "PM10 chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ed5cfb5b73718b4",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "456c3d77a205fcde",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "label": "PM25 chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62fdac8c8e26f401",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "456c3d77a205fcde",
+        "order": 3,
+        "width": 6,
+        "height": 3,
+        "label": "PM100 chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f9652b90dfcc078",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "name": "P03um",
+        "icon": "",
+        "label": "P03um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "95be47d6f60e8d8e",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P03um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "4f9652b90dfcc078",
+                "3a025ceb40ef7436"
+            ]
+        ]
+    },
+    {
+        "id": "3a025ceb40ef7436",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P03um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21c88340d5245902",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "name": "P05um",
+        "icon": "",
+        "label": "P05um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c90d0367150e20cb",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P05um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "21c88340d5245902",
+                "75466a26a191c263"
+            ]
+        ]
+    },
+    {
+        "id": "75466a26a191c263",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P05um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d4c7e986af4b19b",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 6,
+        "width": 6,
+        "height": 4,
+        "name": "P10um",
+        "icon": "",
+        "label": "P10um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c00d1a35375b25ed",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P10um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "2d4c7e986af4b19b",
+                "2b4d5c8f2f9c09d8"
+            ]
+        ]
+    },
+    {
+        "id": "2b4d5c8f2f9c09d8",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P10um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34ed84f9288561d1",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 8,
+        "width": 6,
+        "height": 4,
+        "name": "P25um",
+        "icon": "",
+        "label": "P25um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2b291a263d4ac8f4",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P25um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "34ed84f9288561d1",
+                "736eadcd6f439d06"
+            ]
+        ]
+    },
+    {
+        "id": "736eadcd6f439d06",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P25um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "961f33e27466be7b",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 9,
+        "width": 6,
+        "height": 4,
+        "name": "P50um",
+        "icon": "",
+        "label": "P50um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b25d68fe7d04c78e",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P50um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 340,
+        "wires": [
+            [
+                "961f33e27466be7b",
+                "d7cc1f16616fa61b"
+            ]
+        ]
+    },
+    {
+        "id": "d7cc1f16616fa61b",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P05um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0dad86416685dd87",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp32/BoardV1.1/PMA003i/P100um",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "0a9fad49cf58e7ee"
+            ]
+        ]
+    },
+    {
+        "id": "0a9fad49cf58e7ee",
+        "type": "ui_chart",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "group": "e3b50b4ca1f26d87",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "P100um chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3a9b24f8e9a7b3d",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "e3c48110da354e2c",
+        "order": 15,
+        "width": 6,
+        "height": 4,
+        "name": "PM100",
+        "icon": "fa-fire",
+        "label": "PM100",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": "3",
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "71636b01c36a2856",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "702e15335c491dbc",
+        "order": 10,
+        "width": 6,
+        "height": 4,
+        "name": "P100um",
+        "icon": "",
+        "label": "P100um",
+        "unit": "/0.1L",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 4,
+                "col": "#4e9a06",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 8,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 12,
+                "col": "#f57900",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 30,
+                "col": "#5c3566",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#5c3566",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "35e42dde749df9ce",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp32/BoardV1.1/BME680/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "0a5aeb236a37da65",
+                "2086265ebd155924"
+            ]
+        ]
+    },
+    {
+        "id": "0a5aeb236a37da65",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "c45498108e07daf2",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "Temperature",
+        "icon": "",
+        "label": "Tempertaure",
+        "unit": "C",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#729fcf",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 25,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 50,
+                "col": "#ef2929",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#ef2929",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2086265ebd155924",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "c45498108e07daf2",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Temperature chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 630,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcf39d10d982236a",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp32/BoardV1.1/BME680/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "6071cb2d6a53bc63",
+                "f6cc5807cb3eacc6"
+            ]
+        ]
+    },
+    {
+        "id": "6071cb2d6a53bc63",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "b46a54fee73bc4af",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "Humidity",
+        "icon": "",
+        "label": "Humidity",
+        "unit": "%",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 50,
+                "col": "#edd400",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 51,
+                "col": "#ce5c00",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 100,
+                "col": "#ce5c00",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 420,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f6cc5807cb3eacc6",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "b46a54fee73bc4af",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Humidity chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 620,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3daf00fee8bdcc5c",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp32/BoardV1.1/BME680/altitude",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "09b98789f71e1e94",
+                "1dd14d4c02172355"
+            ]
+        ]
+    },
+    {
+        "id": "09b98789f71e1e94",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "a8de833ef8b3b4bf",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "Altitude",
+        "icon": "",
+        "label": "Altitude",
+        "unit": "m",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#8f5902",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10000,
+                "col": "#8f5902",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 420,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1dd14d4c02172355",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "a8de833ef8b3b4bf",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Altitude chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88538e622a6d53f3",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp32/BoardV1.1/BME680/pressure",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "3982adcb5b45fd48",
+                "d5ef6f8b4bd47441"
+            ]
+        ]
+    },
+    {
+        "id": "3982adcb5b45fd48",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "74ea4b3808458b08",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "Pressure",
+        "icon": "",
+        "label": "Pressure",
+        "unit": "hPa",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#75507b",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 100000,
+                "col": "#75507b",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 420,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d5ef6f8b4bd47441",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "74ea4b3808458b08",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Pressure chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5c6c974b465d78c",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp32/BoardV1.1/BME680/gas_resistance",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "45370c0bb4c34d6a",
+                "696764ebb54c6bee"
+            ]
+        ]
+    },
+    {
+        "id": "45370c0bb4c34d6a",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "9c47c5f84ee30760",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "Gas Resistance",
+        "icon": "",
+        "label": "Gas resistance",
+        "unit": "Ohm",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 50,
+                "col": "#c4a000",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 50000,
+                "col": "#c4a000",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 440,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "696764ebb54c6bee",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "9c47c5f84ee30760",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Gas Resistance chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e77c686ab3bf84e",
+        "type": "ui_artlessgauge",
+        "z": "7d9f66928278cbf6",
+        "group": "428bd1e252a8757c",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "CO2",
+        "icon": "",
+        "label": "CO2",
+        "unit": "ppm",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 500,
+                "col": "#cc0000",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 1000,
+                "col": "#cc0000",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e49086a7d9ec190f",
+        "type": "mqtt in",
+        "z": "7d9f66928278cbf6",
+        "name": "",
+        "topic": "esp32/BoardV1.1/CCS811/CO2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "1e77c686ab3bf84e",
+                "b1b685e55f234034"
+            ]
+        ]
+    },
+    {
+        "id": "b1b685e55f234034",
+        "type": "ui_chart",
+        "z": "7d9f66928278cbf6",
+        "name": "",
+        "group": "428bd1e252a8757c",
+        "order": 3,
+        "width": "6",
+        "height": "4",
+        "label": "CO2 chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08362b69830a799d",
+        "type": "ui_artlessgauge",
+        "z": "7d9f66928278cbf6",
+        "group": "8957198d1d9bbb4a",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "name": "TVOC",
+        "icon": "",
+        "label": "TVOC",
+        "unit": "ppm",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#4e9a06",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 5,
+                "col": "#cc0000",
+                "t": "sec",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#cc0000",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 390,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "529cc73164d0196b",
+        "type": "mqtt in",
+        "z": "7d9f66928278cbf6",
+        "name": "",
+        "topic": "esp32/BoardV1.1/CCS811/TVOC",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "08362b69830a799d",
+                "922aba2e0e8e0a69"
+            ]
+        ]
+    },
+    {
+        "id": "922aba2e0e8e0a69",
+        "type": "ui_chart",
+        "z": "7d9f66928278cbf6",
+        "name": "",
+        "group": "8957198d1d9bbb4a",
+        "order": 3,
+        "width": "6",
+        "height": "4",
+        "label": "TVOC chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d81c7570547140e0",
+        "type": "ui_template",
+        "z": "bebf7213b6b34824",
+        "group": "e3c48110da354e2c",
+        "name": "Style",
+        "order": 20,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>\n<style>\n  .masonry-container > .visible {\n  border-radius: 10px;\n}  \nbody{\n  background: -webkit-linear-grandient(\n  45deg,\n  #F5423F,\n  #83423F,\n  #0E423F\n  )!important;\n  -web-touch-callout: none !important;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 350,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    }
+]
