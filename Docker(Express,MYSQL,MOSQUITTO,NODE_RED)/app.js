@@ -1,4 +1,4 @@
-/*Defining the worked with packs*/
+c/*Defining the worked with packs*/
 const express=require('express');
 const mysql=require('mysql');
 const cors=require('cors');
@@ -6,6 +6,7 @@ const mqtt=require('mqtt');
 const { json } = require('express/lib/response');
 ///Create connection 
 let message1;//message global variable
+//Creating a connection with the data dabse
 const db=mysql.createConnection({
     host:"localhost",
     user:'root',
@@ -33,8 +34,10 @@ client.on("connect",function(){
 client.on("error",function(error){
     console.log("Can't connect!" + error);
     process.exit(1)});
+    //Defining topic
     var topic1="esp32/BoardV1.1/jsonFormatedData1";
     console.log("subscribing t/o topic");
+    //Establishing connection connection with client using a QOS=1
     client.subscribe(topic1,{qos:1});
     client.on('message',function(topic1, message, packet){
         message1=message;
@@ -107,7 +110,7 @@ app.get('/insert',(req,res)=>{
     });
 
 });
-//Define the port to listne into
+//Defining the listening port
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`Server started on port :${port}`);
