@@ -67,10 +67,12 @@ TwoWire PMA003i = TwoWire(1);
 /*-----------------------------------------------------------------------------------------------*/
 
 /******************WIFI & MQTT Broker info**************************/
+        /*Wi-Fi*/
 const char* ssid = "DJAWEB_Pepsi";
 const char* password = "google012345";
+        /*Wi-Fi*/
 const char* mqttServer = "192.168.1.16";
-const int mqttPort = 1883;
+const int mqttPort = 1883;//Mqtt listening port
 const char* mqttUser = "iot_enst";
 const char* mqttPassword = "cherfianadir";
 
@@ -155,6 +157,8 @@ bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
 bme.setGasHeater(320, 150); // 320*C for 150 ms
 /****************************************************/
 /* Verifiying i2c SCLK & SDA */
+/****************************************************/
+
  while(CCS811.begin() != 0){
         Serial.println("failed to init chip, please check if the chip connection is fine");
         delay(1000);
@@ -321,6 +325,10 @@ Serial.println(F("---------------------------------------"));
    long now = millis();
    if (now - lastMsg > 5000) {
      lastMsg=now; 
+     /**********************************************/
+     /*Storing data read from sensors into strings*/
+     /**********************************************/
+
   char str_PM100[20];
   char str_PM25[20];
   char str_PM10[20];
@@ -357,6 +365,10 @@ Serial.println(F("---------------------------------------"));
   char topic_air_quality[50];
   char topic_data_first_chunk[50];
   char topic_data_second_chunk[50];
+     /**********************************************/
+     /*Concatinanting variables to form the correct topics*/
+     /**********************************************/
+
   sprintf(topic_03um,"esp32/%s%s",esp32_board_id,"/PMA003i/P03um");
   sprintf(topic_05um,"esp32/%s%s",esp32_board_id,"/PMA003i/P05um");
   sprintf(topic_10um,"esp32/%s%s",esp32_board_id,"/PMA003i/P10um");
@@ -391,6 +403,9 @@ Serial.println(F("---------------------------------------"));
   dtostrf(CCS811.getTVOCPPB(), 1, 2,str_TVOC);
   dtostrf(CCS811.getCO2PPM(), 1, 2,str_CO2);
   dtostrf(air_quality, 1, 2,str_air_quality);
+     /**********************************************/
+     /*Publishing data to the corect topics*/
+     /**********************************************/
   
   client.publish(topic_PM100,str_PM100);
   delay(500);
@@ -457,6 +472,10 @@ Serial.println(F("---------------------------------------"));
   Serial.println(jsonDataBuffer_2);
   sprintf(topic_data_first_chunk,"esp32/%s%s",esp32_board_id,"/jsonFormatedData1");
   sprintf(topic_data_second_chunk,"esp32/%s%s",esp32_board_id,"/jsonFormatedData2");
+     /**********************************************/
+     /*Storing the state of the data sent in a bolean variable to then test it*/
+     /**********************************************/
+
   bool jsonData_sending_state1=client.publish(topic_data_first_chunk, jsonDataBuffer_1);
   delay(1000);
   bool jsonData_sending_state2=client.publish(topic_data_second_chunk, jsonDataBuffer_2);
@@ -475,6 +494,10 @@ if (jsonData_sending_state2 == true) {
 }
        }
       client.loop();
+     /**********************************************/
+     /*Green led to indicate sending the data succefully*/
+     /**********************************************/
+
 digitalWrite(LED_GREEN_DATA_SENT_SUCCESSFULLY,HIGH);
 delay(1000);
 digitalWrite(LED_GREEN_DATA_SENT_SUCCESSFULLY,LOW);

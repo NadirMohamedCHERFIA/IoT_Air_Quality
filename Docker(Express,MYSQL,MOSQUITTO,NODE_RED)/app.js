@@ -1,10 +1,11 @@
+/*Defining the worked with packs*/
 const express=require('express');
 const mysql=require('mysql');
 const cors=require('cors');
 const mqtt=require('mqtt');
 const { json } = require('express/lib/response');
 ///Create connection 
-let message1;
+let message1;//message global variable
 const db=mysql.createConnection({
     host:"localhost",
     user:'root',
@@ -19,10 +20,12 @@ db.connect((err)=>{
     }
     console.log('mysql connected ....');
 });
+/*Defining the options for mqtt connection */
 options={
     username:"iot_enst",
     password:"cherfianadir",
     clean:true}
+    //The first client connnection
 var client = mqtt.connect("mqtt://localhost",options)
 client.on("connect",function(){	
     console.log("client1:mosquitto connected");
@@ -38,6 +41,7 @@ client.on("error",function(error){
         console.log("message is "+ message);
         console.log("topic is "+ topic1);
     });
+    //The second client connnection
     var client2 = mqtt.connect("mqtt://localhost",options)
     client2.on("connect",function(){	
         console.log("client2:mosquitto connected");
@@ -51,6 +55,7 @@ client.on("error",function(error){
         client2.on('message',function(topic2, message, packet){
         const jsonFormatedData2=JSON.parse(message);
         const jsonFormatedData=JSON.parse(message1);
+        //defining the query sent to the data base
         var query1='INSERT INTO air_quality SET '+'TEMPERATURE_C='+jsonFormatedData.temperature+',HUMIDITY_percentage='+jsonFormatedData.humidity+',ALTITUDE_m='+jsonFormatedData.altitude+',PRESSURE_hPa='+jsonFormatedData.pressure+',PM10='+jsonFormatedData.PM10+',PM25='+jsonFormatedData.PM25+',PM100='+jsonFormatedData.PM100+
         ',P03um_perdecilitre='+jsonFormatedData.P03um+',P05um_perdecilitre='+jsonFormatedData.P05um+',P10um_perdecilitre='+jsonFormatedData.P10um+',P25um_perdecilitre='+jsonFormatedData.P25um+',P50um_perdecilitre='+jsonFormatedData2.P50um+',P100um_perdecilitre='+jsonFormatedData2.P100um+
         ",CO2_ppm="+jsonFormatedData2.CO2+",TVOC_ppb="+jsonFormatedData2.TVOC+",AIR_QUALITY_ppm="+jsonFormatedData2.AIR_QUALITY+",GAS_RESISTANCE_KOhms="+jsonFormatedData2.GAS_RESISTANCE;
@@ -68,7 +73,7 @@ const app = express();
 app.use(cors({
     origin:'*',
 }));
-//db creation 
+//db creation route
 app.get('/createdb',(req,res)=>{
     let sql = 'CREATE DATABASE iot_air_quality';
     db.query(sql,(err,result)=>{
@@ -77,16 +82,7 @@ app.get('/createdb',(req,res)=>{
         res.send('database created .....');
     });
 });
-//db creation 
-app.get('/createdb',(req,res)=>{
-    let sql = 'CREATE DATABASE iot_air_quality';
-    db.query(sql,(err,result)=>{
-        if(err) throw err;
-        console.log(result);
-        res.send('database created .....');
-    });
-});
-//create table
+//create table route
 app.get('/createtable',(req,res)=>{
     let sql ='CREATE TABLE air_quality(id INT AUTO_INCREMENT PRIMARY KEY ,TEMPERATURE_C VARCHAR(20),HUMIDITY_percentage VARCHAR(20),ALTITUDE_m VARCHAR(20),PRESSURE_hPa VARCHAR(20),PM10 VARCHAR(20),PM25 VARCHAR(20),PM100 VARCHAR(20),P03um_perdecilitre VARCHAR(20),P05um_perdecilitre VARCHAR(20),P10um_perdecilitre VARCHAR(20),P25um_perdecilitre VARCHAR(20),P50um_perdecilitre VARCHAR(20),P100um_perdecilitre VARCHAR(20),CO2_ppm VARCHAR(20),TVOC_ppb VARCHAR(20),AIR_QUALITY_ppm VARCHAR(20),GAS_RESISTANCE_KOhms VARCHAR(20),TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)';
     db.query(sql,(err,result)=>{
@@ -98,7 +94,7 @@ app.get('/createtable',(req,res)=>{
 
 //welcome route
 app.get('/',(req,res)=>{
-    res.send('<h1>!WELCOME TO YOUR DOCKER!!</h1>')
+    res.send('<h1>!WELCOME TO YOUR node js container -DOCKER-!!</h1>')
 });
 //inert data
 app.get('/insert',(req,res)=>{
@@ -111,6 +107,7 @@ app.get('/insert',(req,res)=>{
     });
 
 });
+//Define the port to listne into
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`Server started on port :${port}`);
