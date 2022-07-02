@@ -68,10 +68,10 @@ TwoWire PMA003i = TwoWire(1);
 
 /******************WIFI & MQTT Broker info**************************/
         /*Wi-Fi*/
-const char* ssid = "DJAWEB_Pepsi";
-const char* password = "google012345";
+const char* ssid = "Nadir_1";
+const char* password = "cherfianadir";
         /*Wi-Fi*/
-const char* mqttServer = "192.168.1.16";
+const char* mqttServer = "192.168.43.172";
 const int mqttPort = 1883;//Mqtt listening port
 const char* mqttUser = "iot_enst";
 const char* mqttPassword = "cherfianadir";
